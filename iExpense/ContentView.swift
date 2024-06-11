@@ -46,25 +46,57 @@ struct ContentView: View {
      
         NavigationStack{
             List{
-                ForEach(expenses.items)
-                {  item in
-                        HStack{
-                            VStack(alignment: .leading){
-                                Text(item.name).font(.headline)
-                                Text(item.type)
 
+                Section("Personal items"){
+                    ForEach(expenses.items.filter{$0.type == "Personal"})
+                    {
+                        item in
+                            HStack{
+                                VStack(alignment: .leading){
+                                    Text(item.name).font(.headline)
+                                 
+
+                                }
+                                Spacer()
+                                VStack{
+                                    Text(item.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                                }
+                                                                
                             }
-                            Spacer()
-                            VStack{
-                                Text(item.amount, format: .currency(code: "USD"))
+                            .foregroundStyle(item.amount>=1000 ? .red : item.amount>100 ? .orange : item.amount>10 ? .yellow : .green)
+                        
+                        } .onDelete(perform: removeItem)
+
+                }
+                
+                Section("Business items"){
+                    ForEach(expenses.items.filter{$0.type == "Business"})
+                    {
+                        item in
+                            HStack{
+                                VStack(alignment: .leading){
+                                    Text(item.name).font(.headline)
+                                    Text(item.type)
+
+                                }
+                                Spacer()
+                                VStack{
+                                    Text(item.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                                }
+                                                                
                             }
-                                                            
-                        }
-                    
-                    }
+                            .foregroundStyle(item.amount>=1000 ? .red : item.amount>100 ? .orange : item.amount>10 ? .yellow : .green)
+                        
+                        } .onDelete(perform: removeItem)
+                }
+                
+                
+                
+                
+
                     
                 
-                .onDelete(perform: removeItem)
+               
             }
             .navigationTitle("iExpense")
             .toolbar {
