@@ -14,6 +14,7 @@
 		216512E22C18726A0096C526 /* iExpenseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216512E12C18726A0096C526 /* iExpenseTests.swift */; };
 		216512EC2C18726A0096C526 /* iExpenseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216512EB2C18726A0096C526 /* iExpenseUITests.swift */; };
 		216512EE2C18726A0096C526 /* iExpenseUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216512ED2C18726A0096C526 /* iExpenseUITestsLaunchTests.swift */; };
+		216512FB2C187F070096C526 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216512FA2C187F070096C526 /* AddView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		216512E72C18726A0096C526 /* iExpenseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iExpenseUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		216512EB2C18726A0096C526 /* iExpenseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseUITests.swift; sourceTree = "<group>"; };
 		216512ED2C18726A0096C526 /* iExpenseUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		216512FA2C187F070096C526 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				216512D02C1872680096C526 /* iExpenseApp.swift */,
+				216512FA2C187F070096C526 /* AddView.swift */,
 				216512D22C1872680096C526 /* ContentView.swift */,
 				216512D42C1872690096C526 /* Assets.xcassets */,
 				216512D62C1872690096C526 /* Preview Content */,
@@ -259,6 +262,7 @@
 			files = (
 				216512D32C1872680096C526 /* ContentView.swift in Sources */,
 				216512D12C1872680096C526 /* iExpenseApp.swift in Sources */,
+				216512FB2C187F070096C526 /* AddView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
