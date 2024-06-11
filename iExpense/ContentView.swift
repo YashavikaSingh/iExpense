@@ -7,15 +7,42 @@
 
 import SwiftUI
 
+struct ExpenseItem{
+    let name: String
+    let amount: Double
+    let type: String
+}
+
+@Observable
+class Expenses{
+    var items = [ExpenseItem]()
+}
+
 struct ContentView: View {
+    @State private var expenses = Expenses()
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+     
+        NavigationStack{
+            List{
+                ForEach(expenses.items, id: \.name)
+                {
+                    item in  Text(item.name)
+                }
+                .onDelete(perform: removeItem)
+            }
+            .navigationTitle("iExpense")
+            .toolbar {
+                Button("Add Expense", systemImage: "plus"){
+                    
+                }
+            }
+            
         }
-        .padding()
+    }
+
+    func removeItem(at offsets: IndexSet)
+    {
+        expenses.items.remove(atOffsets: offsets)
     }
 }
 
